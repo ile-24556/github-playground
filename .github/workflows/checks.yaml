@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v6
-    - run: printenv
+    - run: printenv | sort
     - run: sudo apt-get update && sudo apt-get upgrade -y
     - run: sudo apt-get install tree
     - run: tree -a
