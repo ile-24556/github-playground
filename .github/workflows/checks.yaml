@@ -1,0 +1,15 @@
+name: checks
+
+on:
+- push
+- pull_request
+
+jobs:
+  ubuntu-environment:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v6
+    - run: printenv
+    - run: sudo apt-get update && sudo apt-get upgrade -y
+    - run: sudo apt-get install tree
+    - run: tree -a
